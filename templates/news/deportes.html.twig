@@ -1,0 +1,19 @@
+<div class="row mt-2">
+	{% for new in news %}
+		<div class="col-sm-6">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">{{ new.title }}</h5>
+				</div>
+				<div class="card-body">
+					<p class="card-text">{{ new.content }}</p>
+					<small class="card-text">
+						<strong>Autor:</strong> {{ new.author.name }}
+						<br>
+						<strong>Fecha de Publicacion:</strong> {{ new.dateCreation|date("Y-m-d") }}
+					</small>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

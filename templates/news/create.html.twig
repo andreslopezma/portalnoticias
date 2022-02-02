@@ -1,0 +1,60 @@
+<div class="row">
+	<div class="col-12 mt-3">
+		<div class="card">
+			<div class="card-header text-center">
+				Cracion Nuevo Post
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-floating">
+								<input type="text" class="form-control" id="title" name="title" placeholder="Titulo del post">
+								<label for="title">Titulo del post</label>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-6">
+							<div class="form-floating">
+								<select class="form-select" id="categoria" name="categoria" aria-label="Floating label select example">
+									<option selected>Seleccione una categoria</option>
+									{% for category in categorys %}
+										<option value={{ category.id }}>{{ category.name }}</option>
+									{% endfor %}
+								</select>
+								<label for="categoria">Seleccione la Categoria</label>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-floating">
+								<select class="form-select" id="autor" name="autor" aria-label="Floating label select example">
+									<option selected>Seleccione el autor</option>
+									{% for author in authors %}
+										<option value={{ author.id }}>{{ author.name }}</option>
+									{% endfor %}
+								</select>
+								<label for="autor">Seleccione el Autor</label>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-12">
+							<div class="form-floating">
+								<textarea class="form-control" placeholder="Escriba su post aca" id="comentario" name="comentario" style="height: 100px"></textarea>
+								<label for="comentario">Escriba su post aca</label>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="d-grid gap-2 col-6 mx-auto">
+							<button class="btn btn-primary" id="guardar_post" type="button" onclick="savePost()">Guardar Post</button>
+						</div>
+					</div>
+				</form>
+				<div class="mt-2" id="message">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
